@@ -11,7 +11,7 @@
     --orange:#e8732c;
     --cream:#f4f1ea;
     --gray-bg:#f0f0f0;
-    --dark-overlay: rgba(10,10,10,0.72);
+    --dark-overlay: rgba(10, 10, 10, 0.623);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -37,30 +37,38 @@
   .hero{
     position:relative;
     min-height:90vh;
-    display:flex;align-items:center;
-    background:url('images/about-bg.jpg') center/cover no-repeat;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:url('images/about-bg.jpg') bottom/cover no-repeat;
+    filter:blur(6px);
+    transform:scale(1.08);
+    z-index:0;
   }
   .hero::before{
     content:"";position:absolute;inset:0;
     background:var(--dark-overlay);
+    z-index:1;
   }
-  .hero-content{position:relative;z-index:2;max-width:900px;padding:60px 60px;color:#fff;}
-  .hero-content h1{font-size:44px;font-weight:700;margin-bottom:22px;}
-  .hero-content p{font-size:15.5px;color:#e7e7e7;margin-bottom:16px;max-width:780px;}
+  .hero-content{position:relative;z-index:2;max-width:1100px;width:100%;padding:60px 60px;color:#fff;text-align:left;margin:0 auto;}
+  .hero-content h1{font-size:34px;font-weight:700;margin-bottom:18px;}
+  .hero-content p{font-size:13px;line-height:1.65;color:#e7e7e7;margin-bottom:14px;max-width:980px;}
 
   .vision{
     position:relative;
-    min-height:60vh;
-    display:flex;align-items:center;
-    background:url('images/vision-bg.jpg') center/cover no-repeat;
+    min-height:50vh;
+    display:flex;justify-content:top;
+    background:url('images/vision-bg.jpg') top/cover no-repeat;
   }
   .vision::before{
     content:"";position:absolute;inset:0;
-    background:rgba(20,20,20,0.62);
+    background:rgba(20, 20, 20, 0.836);
   }
-  .vision-content{position:relative;z-index:2;max-width:760px;padding:60px;color:#fff;}
-  .vision-content h2{font-size:34px;margin-bottom:18px;font-weight:700;}
-  .vision-content p{font-size:15.5px;color:#e9e9e9;}
+  .vision-content{position:relative;z-index:2;max-width:1100px;width:100%;padding:60px 60px;color:#fff;text-align:left;margin:0 auto;}
+  .vision-content h2{font-size:34px;font-weight:700;}
+  .vision-content p{font-size:13px;line-height:1.65;color:#e7e7e7;margin-bottom:14px;max-width:980px;}
 
   .services{padding:90px 8% 70px;background:#fff;}
   .services h2{font-size:34px;font-weight:700;margin-bottom:18px;}
@@ -92,7 +100,8 @@
   footer{background:#000;color:#ddd;padding:60px 8% 20px;}
   .footer-grid{display:flex;gap:60px;flex-wrap:wrap;margin-bottom:40px;}
   .footer-col{flex:1;min-width:220px;}
-  .footer-col .logo-wrap img{height:90px;margin-bottom:10px;}
+  .footer-col .logo-wrap{justify-content:center;}
+  .footer-col .logo-wrap img{height:140px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;}
   .footer-col h4{color:#fff;font-size:17px;margin-bottom:18px;font-weight:700;}
   .footer-col ul{list-style:none;}
   .footer-col ul li{margin-bottom:12px;font-size:14px;}
@@ -195,17 +204,16 @@
 <section id="home" class="hero">
   <div class="hero-content" id="about">
     <h1>AL Makkah Press (Pvt) Ltd</h1>
-    <p>Welcome to Al Makkah Press (Pvt) Ltd, one of the oldest and most trusted names in the Printing and Packaging industry in Pakistan. Established in 1970, we pride ourselves as pioneers in providing high-quality printing and packaging solutions to a diverse range of clients.
-    Founded on the principles of excellence and innovation, Al Makkah Press (Pvt) Ltd has continually evolved to meet the changing needs of the market. Our extensive expertise allows us to offer a comprehensive array of services, including Packaging Design, Offset Printing and Gravure Printing. We take pride in our state-of-the-art technology and skilled workforce.</p>
+    <p>Welcome to Al Makkah Press (Pvt) Ltd, one of the oldest and most trusted names in the Printing and Packaging industry in Pakistan. Established in 1970, we pride ourselves as pioneers in providing high-quality printing and packaging solutions to a diverse range of clients. Founded on the principles of excellence and innovation, Al Makkah Press (Pvt) Ltd has continually evolved to meet the changing needs of the market. Our extensive expertise allows us to offer a comprehensive array of services, including Packaging Design, Offset Printing and Gravure Printing. We take pride in our state-of-the-art technology and skilled workforce.</p>
     <p>At Al Makkah Press, we understand the importance of branding and presentation. Our commitment to quality, timeliness, and customer satisfaction has made us a preferred choice for businesses looking to enhance their visibility through exceptional print materials.</p>
-    <p>We are dedicated to turning your ideas into reality with precision and creativity. As we look to the future, Al Makkah Press (Pvt) Ltd remains steadfast in our mission to uphold tradition while embracing innovation. We continue to explore new methods and technologies to enhance our service offerings, ensuring that we remain at the forefront of the printing and packaging industry of Pakistan. Join us in our journey as we create compelling visual communications and packaging solutions that drive success for our clients and contribute to the vibrant business landscape of Pakistan.</p>
+    <p>We are dedicated to turning your ideas into reality with precision and creativity. As we look to the future, Al Makkah Press (Pvt) Ltd remains steadfast in our mission to uphold tradition while embracing innovation. We continue to explore new methods and technologies to enhance our service offerings, ensuring that we remain at the forefront of the printing and packaging industry of Pakistan. Join us ins our journey as we create compelling visual communications and packaging solutions that drive success for our clients and contributevtoe Windows.</p>
   </div>
 </section>
 
 <section id="vision" class="vision">
   <div class="vision-content">
     <h2>Vision</h2>
-    <p>Our vision is to be the leading innovator in the Printing and Packaging industry in Pakistan, recognized not only for our rich heritage and experience but also for our commitment to excellence, sustainability, and customer-centric solutions. We aspire to set the benchmark for quality and creativity, empowering businesses to effectively communicate their unique stories and values through impactful print and packaging.</p>
+    <p>Our vision is to be the leading innovator in the Printing and Packaging industry in Pakistan, <br> recognized not only for our rich heritage and experience but also for our commitment to <br> excellence, sustainability, and customer-centric solutions. We aspire to set the benchmark for <br> quality and creativity, empowering businesses to effectively communicate their unique stories <br> and values through impactful print and packaging.</p>
   </div>
 </section>
 
